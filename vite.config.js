@@ -1,3 +1,4 @@
+import { resolve } from 'path';
 import { defineConfig } from 'vite';
 // import laravel from 'laravel-vite-plugin';
 // import webfontDownload from 'vite-plugin-webfont-dl';
@@ -12,8 +13,16 @@ export default defineConfig({
     //   'https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Montserrat:wght@400;500;600;700&display=swap',
     // ]),
   ],
+  base: './',
   build: {
     watch: true,
+    outDir: 'dist',
+    emptyOutDir: true,
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'resources', 'index.html'),
+      },
+    },
   },
   css: {
     devSourcemap: true,
