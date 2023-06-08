@@ -14,13 +14,16 @@ export default defineConfig({
     // ]),
   ],
   base: './',
+  server: {
+    open: '/index.html',
+  },
   build: {
     watch: true,
     outDir: 'dist',
     emptyOutDir: true,
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'resources', 'index.html'),
+        main: resolve(__dirname, 'index.html'),
       },
     },
   },
